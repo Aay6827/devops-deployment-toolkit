@@ -3,3 +3,11 @@
 
 # Local backup
 01-linux/linux-health-check-v1.sh
+
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Pytest generated files
+.pytest_cache/
