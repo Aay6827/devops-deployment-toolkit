@@ -1,0 +1,5 @@
+# Generated health-check reports
+01-linux/health-check-*.log
+
+# Local backup
+01-linux/linux-health-check-v1.sh
