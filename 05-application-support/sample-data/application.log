@@ -1,0 +1,25 @@
+2026-11-03T09:00:00Z INFO service=order-service correlation_id=COR-1001 message="Order ORD-5001 created successfully"
+
+2026-11-03T09:01:15Z INFO service=payment-service correlation_id=COR-1001 message="Payment authorization successful"
+
+2026-11-03T09:02:30Z INFO service=fulfilment-service correlation_id=COR-1001 message="Fulfilment request accepted"
+
+2026-11-03T09:10:00Z WARNING service=fulfilment-service correlation_id=COR-1002 message="Downstream response delayed"
+
+2026-11-03T09:10:45Z ERROR service=fulfilment-service correlation_id=COR-1002 message="Fulfilment API returned HTTP 504"
+
+2026-11-03T09:11:00Z ERROR service=order-service correlation_id=COR-1002 message="Order ORD-5002 processing delayed"
+
+2026-11-03T09:20:00Z INFO service=order-service correlation_id=COR-1003 message="Order ORD-5003 created successfully"
+
+2026-11-03T09:20:30Z ERROR service=payment-service correlation_id=COR-1003 message="Database connection timeout"
+
+2026-11-03T09:21:00Z WARNING service=payment-service correlation_id=COR-1003 message="Payment retry initiated"
+
+2026-11-03T09:22:00Z ERROR service=payment-service correlation_id=COR-1003 message="Payment authorization failed"
+
+2026-11-03T09:30:00Z CRITICAL service=inventory-service correlation_id=COR-1004 message="Inventory database unavailable"
+
+2026-11-03T09:31:00Z ERROR service=inventory-service correlation_id=COR-1004 message="Inventory lookup failed for SKU SKU-9001"
+
+2026-11-03T09:40:00Z INFO service=returns-service correlation_id=COR-1005 message="Return request RET-2001 created successfully"

@@ -14,3 +14,7 @@ __pycache__/
 
 # Local environment variables and secrets
 .env
+
+# Application Support generated files
+05-application-support/.pytest_cache/
+05-application-support/**/__pycache__/
