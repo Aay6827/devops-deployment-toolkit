@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-toolkit-api
+  namespace: devops-toolkit
+  labels:
+    app: devops-toolkit-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-toolkit-api
+  template:
+    metadata:
+      labels:
+        app: devops-toolkit-api
+    spec:
+      containers:
+        - name: api
+          image: devops-toolkit-api:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: devops-toolkit-config
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+            failureThreshold: 12
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            failureThreshold: 3
