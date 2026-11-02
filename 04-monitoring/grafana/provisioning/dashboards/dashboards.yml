@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: "DevOps Toolkit"
+    orgId: 1
+    folder: "DevOps Toolkit"
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

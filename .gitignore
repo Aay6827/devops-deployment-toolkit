@@ -11,3 +11,6 @@ __pycache__/
 
 # Pytest generated files
 .pytest_cache/
+
+# Local environment variables and secrets
+.env
